@@ -1,0 +1,64 @@
+GET http://localhost:3001
+
+###
+POST http://localhost:3001/api/customers/create-customer
+Content-Type: application/json
+
+{
+  "first_name": "John Doe",
+  "last_name": "john.doe@example.com",
+  "phone_number": "9876543210"
+}
+
+### Get customer by ID
+GET http://localhost:3001/api/customers/1
+Content-Type: application/json
+
+
+### Update customer
+PUT http://localhost:3001/api/customers/1
+Content-Type: application/json
+
+{
+  "first_name": "John Updated",
+  "last_name": "john.updated@example.com",
+  "phone_number": "1234567890"
+}
+
+
+### Delete customer
+DELETE http://localhost:3001/api/customers/1
+Content-Type: application/json
+
+
+### Add address for customer
+POST http://localhost:3001/api/customers/1/addresses
+Content-Type: application/json
+
+{
+  "address_details": "123 Street Name",
+  "city": "Hyderabad",
+  "state": "Telangana",
+  "pin_code": "500001"
+}
+
+
+### Get all addresses for a customer
+GET http://localhost:3001/api/customers/1/addresses
+Content-Type: application/json
+
+
+### Update address
+PUT http://localhost:3001/api/addresses/1
+Content-Type: application/json
+
+{
+  "address_details": "456 Updated Street",
+  "city": "Secunderabad",
+  "state": "Telangana",
+  "pin_code": "500002"
+}
+
+### Delete address
+DELETE http://localhost:3001/api/addresses/2
+Content-Type: application/json
